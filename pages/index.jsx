@@ -20,7 +20,7 @@ export default function Home({ painting }) {
       </Flex>
       <Wrap spacing={7} justify="center">
         {painting.map((painting) => (
-          <WrapItem>
+          <WrapItem key={painting.id}>
             <Box w="260px" h="194px" borderRadius="10px" shadow="md" mx={4}>
               <Stack alignItems="center">
                 <Image
