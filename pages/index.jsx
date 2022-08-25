@@ -1,22 +1,12 @@
 import { client } from "../libs/client";
-import { Heading, Box, Image, Stack, Grid, Flex } from "@chakra-ui/react";
-import Link from "next/link";
+import { Image, Grid, Flex } from "@chakra-ui/react";
+import { Header } from "../components/header";
 
 export default function Home({ painting }) {
   return (
     <>
       <header>
-        <Flex alignItems="center" justifyContent="center" mt={8}>
-          <Stack mx={4}>
-            <Link href="/">Home</Link>
-          </Stack>
-          <Stack mx={4}>
-            <Link href="./profile">Profile</Link>
-          </Stack>
-          <Stack mx={4}>
-            <Link href="https://www.instagram.com/_249cm/">Instagram</Link>
-          </Stack>
-        </Flex>
+        <Header />
       </header>
       <Flex
         alignItems="center"
