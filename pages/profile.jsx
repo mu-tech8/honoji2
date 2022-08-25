@@ -1,5 +1,14 @@
 import { client } from "../libs/client";
-import { Heading, Box, Image, Stack, Grid, Flex } from "@chakra-ui/react";
+import {
+  Heading,
+  Box,
+  Image,
+  Stack,
+  Grid,
+  Flex,
+  Wrap,
+  WrapItem,
+} from "@chakra-ui/react";
 import { Header } from "../components/header";
 
 export default function Profile({ painting }) {

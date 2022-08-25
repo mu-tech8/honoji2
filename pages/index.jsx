@@ -1,5 +1,5 @@
 import { client } from "../libs/client";
-import { Image, Grid, Flex } from "@chakra-ui/react";
+import { Image, Box, Stack, Flex, Wrap, WrapItem } from "@chakra-ui/react";
 import { Header } from "../components/header";
 
 export default function Home({ painting }) {
@@ -18,20 +18,24 @@ export default function Home({ painting }) {
         <br />
         「この世にあって欲しいもの」を作っています。
       </Flex>
-      <Grid templateColumns="repeat(3, 1fr)" rowGap={6}>
+      <Wrap spacing={7} justify="center">
         {painting.map((painting) => (
-          <Image
-            mx="auto"
-            key={painting.id}
-            alt={"Painting of the author"}
-            src={painting.image.url}
-            width={480}
-            height={360}
-            borderRadius="4px"
-            layout={"intrinsic"}
-          />
+          <WrapItem>
+            <Box w="260px" h="194px" borderRadius="10px" shadow="md" mx={4}>
+              <Stack alignItems="center">
+                <Image
+                  mx="auto"
+                  key={painting.id}
+                  alt={"Painting of the author"}
+                  src={painting.image.url}
+                  borderRadius="4px"
+                  layout={"intrinsic"}
+                />
+              </Stack>
+            </Box>
+          </WrapItem>
         ))}
-      </Grid>
+      </Wrap>
     </>
   );
 }
