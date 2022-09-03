@@ -10,7 +10,7 @@ import {
   PopoverCloseButton,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
-
+// eslint-disable-next-line react/display-name
 export const PopoverMenu = memo((props) => {
   const { onClickHome, onClickWorks, onClickProfile, onClickContact } = props;
 

@@ -1,20 +1,6 @@
-import {
-  Flex,
-  Stack,
-  Heading,
-  Box,
-  Popover,
-  Button,
-  PopoverContent,
-  PopoverArrow,
-  PopoverHeader,
-  PopoverBody,
-  PopoverTrigger,
-  PopoverCloseButton,
-} from "@chakra-ui/react";
+import { Flex, Stack, Heading, Box } from "@chakra-ui/react";
 
 import Link from "next/link";
-import React, { useCallback, memo } from "react";
 import { useRouter } from "next/router";
 import { PopoverMenu } from "./molecules/PopoverMenu";
 
