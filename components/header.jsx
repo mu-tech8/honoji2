@@ -20,10 +20,10 @@ import { PopoverMenu } from "./molecules/PopoverMenu";
 
 export const Header = memo(() => {
   const router = useRouter();
-  const onClickHome = useCallback(() => router.push("/"), []);
-  const onClickWorks = useCallback(() => router.push("/works"), []);
-  const onClickProfile = useCallback(() => router.push("/profile"), []);
-  const onClickContact = useCallback(() => router.push("/contact"), []);
+  const onClickHome = router.push("/");
+  const onClickWorks = router.push("/works");
+  const onClickProfile = router.push("/profile");
+  const onClickContact = router.push("/contact");
 
   return (
     <>
