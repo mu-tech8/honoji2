@@ -3,6 +3,7 @@ import { Flex, Stack, Heading, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { PopoverMenu } from "./molecules/PopoverMenu";
+import { memo } from "react";
 
 export const Header = memo(() => {
   const router = useRouter();
