@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { PopoverMenu } from "./molecules/PopoverMenu";
 import { memo } from "react";
 
+// eslint-disable-next-line react/display-name
 export const Header = memo(() => {
   const router = useRouter();
   const onClickHome = router.push("/");
