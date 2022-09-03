@@ -8,6 +8,8 @@ import { memo } from "react";
 // eslint-disable-next-line react/display-name
 export const Header = memo(() => {
   const router = useRouter();
+  const isReady = router.isReady;
+
   const onClickHome = router.push("/");
   const onClickWorks = router.push("/works");
   const onClickProfile = router.push("/profile");
