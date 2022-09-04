@@ -58,11 +58,11 @@ const Works = ({ painting }) => {
         isOpen={isOpen}
         onClose={onClose}
         returnFocusOnClose={false}
-        size={{base:"lg", md:"6xl"}}
+        size={{ base: "lg", md: "6xl" }}
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+          <ModalHeader></ModalHeader>
           <ModalCloseButton />
 
           <ModalBody>
@@ -75,6 +75,7 @@ const Works = ({ painting }) => {
               layout={"intrinsic"}
             />
           </ModalBody>
+          <ModalFooter></ModalFooter>
         </ModalContent>
       </Modal>
     </>
