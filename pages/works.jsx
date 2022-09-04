@@ -1,7 +1,32 @@
 import { client } from "../libs/client";
-import { Image, Box, Stack, Flex, Wrap, WrapItem } from "@chakra-ui/react";
+import {
+  Image,
+  Box,
+  Stack,
+  Wrap,
+  WrapItem,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+} from "@chakra-ui/react";
+import { useState } from "react";
 
-export default function Works({ painting }) {
+const Works = ({ painting }) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const paintingUrl = painting.map((painting) => painting.image.url);
+
+  const [selectedIndex, setSelectedIndex] = useState("");
+  const onClickImage = (index) => {
+    setSelectedIndex(index);
+    onOpen();
+  };
+
   return (
     <>
       <Wrap
@@ -11,10 +36,10 @@ export default function Works({ painting }) {
         mt={16}
         w={{ base: "320px", md: "1400px" }}
       >
-        {painting.map((painting) => (
+        {painting.map((painting, index) => (
           <WrapItem key={painting.id}>
             <Box w="260px" h="194px" borderRadius="10px" shadow="md" mx={4}>
-              <Stack alignItems="center">
+              <Stack alignItems="center" onClick={() => onClickImage(index)}>
                 <Image
                   mx="auto"
                   key={painting.id}
@@ -28,9 +53,33 @@ export default function Works({ painting }) {
           </WrapItem>
         ))}
       </Wrap>
+
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        returnFocusOnClose={false}
+        size={{base:"lg", md:"6xl"}}
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Modal Title</ModalHeader>
+          <ModalCloseButton />
+
+          <ModalBody>
+            <Image
+              mx="auto"
+              key={painting.id}
+              alt={"Painting of the author"}
+              src={paintingUrl[selectedIndex]}
+              borderRadius="4px"
+              layout={"intrinsic"}
+            />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
-}
+};
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "painting" });
@@ -41,3 +90,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+export default Works;
