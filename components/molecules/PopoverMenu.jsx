@@ -56,7 +56,7 @@ export const PopoverMenu = memo((props) => {
           </Button>
           <Button
             w="100%"
-            oonClick={() => {
+            onClick={() => {
               onClickProfile();
               onClose();
             }}

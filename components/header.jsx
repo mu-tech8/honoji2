@@ -3,15 +3,13 @@ import { Flex, Stack, Heading, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { PopoverMenu } from "./molecules/PopoverMenu";
-import { memo, useState, useEffect } from "react";
+import { memo } from "react";
 
 // eslint-disable-next-line react/display-name
 export const Header = memo(() => {
   const router = useRouter();
 
-  const onClickHome = () => {
-    router.push("/");
-  };
+  const onClickHome = () => router.push("/");
   const onClickWorks = () => router.push("/works");
   const onClickProfile = () => router.push("/profile");
   const onClickContact = () => router.push("/contact");
