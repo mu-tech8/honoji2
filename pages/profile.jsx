@@ -1,7 +1,6 @@
-import { client } from "../libs/client";
-import { Flex, Center, Box } from "@chakra-ui/react";
+import { Center } from "@chakra-ui/react";
 
-export default function Profile({ painting }) {
+export default function Profile() {
   return (
     <>
       <Center mt={24} mb={8}>
@@ -22,13 +21,3 @@ export default function Profile({ painting }) {
     </>
   );
 }
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "painting" });
-
-  return {
-    props: {
-      painting: data.contents,
-    },
-  };
-};
