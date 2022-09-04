@@ -9,7 +9,9 @@ import { memo, useState, useEffect } from "react";
 export const Header = memo(() => {
   const router = useRouter();
 
-  const onClickHome = () => router.push("/");
+  const onClickHome = () => {
+    router.push("/");
+  };
   const onClickWorks = () => router.push("/works");
   const onClickProfile = () => router.push("/profile");
   const onClickContact = () => router.push("/contact");

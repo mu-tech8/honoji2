@@ -25,8 +25,8 @@ export default function Home({ painting }) {
           }
           borderRadius="4px"
           layout={"intrinsic"}
-          w={{ base: "200px", md: "500px" }}
-          h={{ base: "150px", md: "400px" }}
+          w={{ base: "300px", md: "500px" }}
+          h={{ base: "200px", md: "400px" }}
         />
       </Center>
     </>

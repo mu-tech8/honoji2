@@ -8,14 +8,15 @@ import {
   PopoverBody,
   PopoverTrigger,
   PopoverCloseButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import { HamburgerIcon } from "@chakra-ui/icons";
 // eslint-disable-next-line react/display-name
 export const PopoverMenu = memo((props) => {
   const { onClickHome, onClickWorks, onClickProfile, onClickContact } = props;
-
+  const { isOpen, onToggle, onClose } = useDisclosure();
   return (
-    <Popover>
+    <Popover returnFocusOnClose={false} isOpen={isOpen} onClose={onClose}>
       <PopoverTrigger>
         <Button
           bg="white"
@@ -23,6 +24,7 @@ export const PopoverMenu = memo((props) => {
           position="absolute"
           top="1"
           right="1"
+          onClick={onToggle}
         >
           <HamburgerIcon w={5} h={5} fontSize="1.25rem" bg="white" />
         </Button>
@@ -32,16 +34,44 @@ export const PopoverMenu = memo((props) => {
         <PopoverCloseButton />
         <PopoverHeader>Menu</PopoverHeader>
         <PopoverBody>
-          <Button w="100%" onClick={onClickHome} bg="white">
+          <Button
+            w="100%"
+            onClick={() => {
+              onClickHome();
+              onClose();
+            }}
+            bg="white"
+          >
             Home
           </Button>
-          <Button w="100%" onClick={onClickWorks} bg="white">
+          <Button
+            w="100%"
+            onClick={() => {
+              onClickWorks();
+              onClose();
+            }}
+            bg="white"
+          >
             Works
           </Button>
-          <Button w="100%" onClick={onClickProfile} bg="white">
+          <Button
+            w="100%"
+            oonClick={() => {
+              onClickProfile();
+              onClose();
+            }}
+            bg="white"
+          >
             Profile
           </Button>
-          <Button w="100%" onClick={onClickContact} bg="white">
+          <Button
+            w="100%"
+            onClick={() => {
+              onClickContact();
+              onClose();
+            }}
+            bg="white"
+          >
             Contact
           </Button>
         </PopoverBody>
