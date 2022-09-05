@@ -7,7 +7,7 @@ export default function handler(req, res) {
     const msg = {
       to: req.body.email,
       bcc: "mutech8@gmail.com",
-      from: "magobe_theword@yahoo.co.jp",
+      from: "info_satohonatsu@248cm.com",
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
