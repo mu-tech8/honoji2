@@ -1,8 +1,16 @@
 import { Center } from "@chakra-ui/react";
+import Seo from "../components/layout/Seo";
 
 export default function Profile() {
   return (
     <>
+      <Seo
+        pageTitle={"Profile"}
+        pageDescription={"Profile"}
+        // pageImg={"https://demo.com"}
+        // pageImgWidth={1280}
+        // pageImgHeight={960}
+      />
       <Center mt={24} mb={8}>
         宮城県気仙沼市生まれ・在住
       </Center>

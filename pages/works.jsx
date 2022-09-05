@@ -16,6 +16,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import Seo from "../components/layout/Seo";
 
 const Works = ({ painting }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -29,6 +30,13 @@ const Works = ({ painting }) => {
 
   return (
     <>
+      <Seo
+        pageTitle={"Works"}
+        pageDescription={"Works"}
+        // pageImg={"https://demo.com"}
+        // pageImgWidth={1280}
+        // pageImgHeight={960}
+      />
       <Wrap
         spacing={8}
         justify="center"
@@ -39,8 +47,11 @@ const Works = ({ painting }) => {
         {painting.map((painting, index) => (
           <WrapItem key={painting.id}>
             <Box w="260px" h="194px" borderRadius="10px" shadow="md" mx={4}>
-
-              <Stack alignItems="center" onClick={() => onClickImage(index)} _hover={{ cursor: "pointer" }} >
+              <Stack
+                alignItems="center"
+                onClick={() => onClickImage(index)}
+                _hover={{ cursor: "pointer" }}
+              >
                 <Image
                   mx="auto"
                   key={painting.id}

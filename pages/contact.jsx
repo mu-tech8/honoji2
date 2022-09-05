@@ -9,6 +9,7 @@ import {
   Center,
   FormLabel,
 } from "@chakra-ui/react";
+import Seo from "../components/layout/Seo";
 
 export default function Contact() {
   const sendForm = async (event) => {
@@ -31,6 +32,13 @@ export default function Contact() {
 
   return (
     <>
+      <Seo
+        pageTitle={"Contact"}
+        pageDescription={"Contact"}
+        // pageImg={"https://demo.com"}
+        // pageImgWidth={1280}
+        // pageImgHeight={960}
+      />
       <Center fontSize="14px" mt={4}>
         お問い合わせはこちらから
       </Center>
