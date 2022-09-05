@@ -39,7 +39,8 @@ const Works = ({ painting }) => {
         {painting.map((painting, index) => (
           <WrapItem key={painting.id}>
             <Box w="260px" h="194px" borderRadius="10px" shadow="md" mx={4}>
-              <Stack alignItems="center" onClick={() => onClickImage(index)}>
+
+              <Stack alignItems="center" onClick={() => onClickImage(index)} _hover={{ cursor: "pointer" }} >
                 <Image
                   mx="auto"
                   key={painting.id}
