@@ -34,7 +34,7 @@ export default function Contact() {
     <>
       <Seo pageTitle={"Contact"} pageDescription={"Contact"} />
       <Center fontSize="14px" mt={4}>
-        お問い合わせはこちらから{process.env.TEST}
+        お問い合わせはこちらから
       </Center>
       <Center fontSize="12px">Please contact from this form</Center>
       <Flex
