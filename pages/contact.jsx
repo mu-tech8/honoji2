@@ -32,15 +32,9 @@ export default function Contact() {
 
   return (
     <>
-      <Seo
-        pageTitle={"Contact"}
-        pageDescription={"Contact"}
-        // pageImg={"https://demo.com"}
-        // pageImgWidth={1280}
-        // pageImgHeight={960}
-      />
+      <Seo pageTitle={"Contact"} pageDescription={"Contact"} />
       <Center fontSize="14px" mt={4}>
-        お問い合わせはこちらから
+        お問い合わせはこちらから{process.env.TEST}
       </Center>
       <Center fontSize="12px">Please contact from this form</Center>
       <Flex
