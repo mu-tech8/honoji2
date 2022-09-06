@@ -1,7 +1,8 @@
 import { Center } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
+import React from "react";
 
-export default function Profile() {
+const Profile = () => {
   return (
     <>
       <Seo
@@ -31,4 +32,6 @@ export default function Profile() {
       </Center>
     </>
   );
-}
+};
+
+export default Profile;

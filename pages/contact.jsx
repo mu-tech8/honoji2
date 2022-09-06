@@ -1,5 +1,5 @@
 import Router from "next/router";
-import React, { Fragment } from "react";
+import React from "react";
 import {
   Flex,
   FormControl,
@@ -11,7 +11,7 @@ import {
 } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
 
-export default function Contact() {
+const Contact = () => {
   const sendForm = async (event) => {
     event.preventDefault();
 
@@ -76,4 +76,6 @@ export default function Contact() {
       </Flex>
     </>
   );
-}
+};
+
+export default Contact;

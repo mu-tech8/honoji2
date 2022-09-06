@@ -1,8 +1,9 @@
 import { client } from "../libs/client";
 import { Image, Flex, Center } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
+import React from "react";
 
-export default function Home({ painting }) {
+const Home = ({ painting }) => {
   return (
     <>
       <Seo
@@ -40,7 +41,7 @@ export default function Home({ painting }) {
       </Center>
     </>
   );
-}
+};
 // データをテンプレートに受け渡す部分の処理を記述します
 export const getStaticProps = async () => {
   const data = await client.get({ endpoint: "painting" });
@@ -51,3 +52,5 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+export default Home;

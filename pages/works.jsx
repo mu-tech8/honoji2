@@ -14,7 +14,7 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Seo from "../components/layout/Seo";
 
 const Works = ({ painting }) => {

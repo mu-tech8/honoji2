@@ -1,7 +1,8 @@
 import { Flex } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
+import React from "react";
 
-export default function Thankyou() {
+const Thankyou = () => {
   return (
     <>
       <Seo
@@ -21,4 +22,6 @@ export default function Thankyou() {
       </Flex>
     </>
   );
-}
+};
+
+export default Thankyou;
