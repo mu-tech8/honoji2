@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.0.9",
     "@sendgrid/mail": "^7.7.0",
+    "cjs": "^0.0.11",
     "microcms-js-sdk": "^2.2.1",
     "next": "12.2.5",
     "react": "18.2.0",

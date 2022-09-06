@@ -1,5 +1,4 @@
 import { Flex } from "@chakra-ui/react";
-import { Header } from "../components/header";
 import Seo from "../components/layout/Seo";
 
 export default function Thankyou() {
