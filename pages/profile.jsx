@@ -24,7 +24,10 @@ export default function Profile() {
         原風景である故郷の海と山をモチーフに、
       </Center>
       <Center my={8} p={2}>
-        夢みがちな「この世にあって欲しいもの」を作っています。
+        夢みがちな「この世にあって欲しいもの」
+      </Center>
+      <Center my={8} p={2}>
+        を作っています。
       </Center>
     </>
   );
