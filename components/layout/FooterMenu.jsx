@@ -2,7 +2,7 @@ import { ButtonGroup, Container, Stack, Text, Icon } from "@chakra-ui/react";
 import { FaTwitter, FaInstagram, FaTshirt } from "react-icons/fa";
 import Link from "next/link";
 
-const Footer = () => (
+const FooterMenu = () => (
   <Container
     as="footer"
     role="contentinfo"
@@ -45,4 +45,4 @@ const Footer = () => (
   </Container>
 );
 
-export default Footer;
+export default FooterMenu;

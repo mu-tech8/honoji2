@@ -1,10 +1,10 @@
 import { Flex, Stack, Heading, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ModalMenu } from "./molecules/ModalMenu";
+import { ModalMenu } from "../molecules/ModalMenu";
 
 // eslint-disable-next-line react/display-name
-const Header = () => {
+const HeaderMenu = () => {
   const router = useRouter();
 
   const onClickHome = () => router.push("/");
@@ -45,4 +45,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderMenu;
