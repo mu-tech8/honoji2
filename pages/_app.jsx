@@ -1,13 +1,13 @@
 import { ChakraProvider } from "@chakra-ui/react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+import HeaderMenu from "../components/layout/HeaderMenu";
+import FooterMenu from "../components/layout/FooterMenu";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <Header />
+      <HeaderMenu />
       <Component {...pageProps} />
-      <Footer />
+      <FooterMenu />
     </ChakraProvider>
   );
 }
