@@ -17,6 +17,7 @@ const Contact = () => {
   const sendForm = async (event) => {
     event.preventDefault();
     setIsDisabled(true);
+
     const res = await fetch("/api/send", {
       body: JSON.stringify({
         name: event.target.name.value,
