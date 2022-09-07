@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import { ModalMenu } from "./molecules/ModalMenu";
 
 // eslint-disable-next-line react/display-name
-export const Header = () => {
+const Header = () => {
   const router = useRouter();
 
   const onClickHome = () => router.push("/");
@@ -44,3 +44,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;

@@ -2,7 +2,7 @@ import { ButtonGroup, Container, Stack, Text, Icon } from "@chakra-ui/react";
 import { FaTwitter, FaInstagram, FaTshirt } from "react-icons/fa";
 import Link from "next/link";
 
-export const Footer = () => (
+const Footer = () => (
   <Container
     as="footer"
     role="contentinfo"
@@ -44,3 +44,5 @@ export const Footer = () => (
     </Stack>
   </Container>
 );
+
+export default Footer;
