@@ -10,6 +10,7 @@ import {
   FormLabel,
 } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
+import fetch from "node-fetch";
 
 const Contact = () => {
   const [isDisabled, setIsDisabled] = useState(false);
