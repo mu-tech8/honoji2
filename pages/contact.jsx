@@ -1,5 +1,5 @@
-import Router from "next/router";
-import React from "react";
+import { useState } from "react";
+import { useRouter } from "next/router";
 import {
   Flex,
   FormControl,
@@ -12,9 +12,11 @@ import {
 import Seo from "../components/layout/Seo";
 
 const Contact = () => {
+  const [isDisabled, setIsDisabled] = useState(false);
+  const router = useRouter();
   const sendForm = async (event) => {
     event.preventDefault();
-
+    setIsDisabled(true);
     const res = await fetch("/api/send", {
       body: JSON.stringify({
         name: event.target.name.value,
@@ -27,7 +29,7 @@ const Contact = () => {
       method: "POST",
     });
 
-    if (res.ok) Router.push("/thank-you");
+    if (res.ok) router.push("/thank-you");
   };
 
   return (
@@ -68,7 +70,12 @@ const Contact = () => {
               placeholder="本文"
               required
             ></Textarea>
-            <Button mt={3} colorScheme="teal" type="submit">
+            <Button
+              mt={3}
+              colorScheme="teal"
+              type="submit"
+              disabled={isDisabled}
+            >
               送信
             </Button>
           </FormControl>

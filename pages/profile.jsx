@@ -1,6 +1,5 @@
 import { Center } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
-import React from "react";
 
 const Profile = () => {
   return (

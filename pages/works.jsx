@@ -14,14 +14,27 @@ import {
   ModalFooter,
   useDisclosure,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { useState } from "react";
 import Seo from "../components/layout/Seo";
+import { memo } from "react";
 
-const Works = ({ painting }) => {
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "painting" });
+
+  return {
+    props: {
+      painting: data.contents,
+    },
+  };
+};
+
+// eslint-disable-next-line react/display-name
+const Works = memo(({ painting }) => {
+  const [selectedIndex, setSelectedIndex] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
   const paintingUrl = painting.map((painting) => painting.image.url);
 
-  const [selectedIndex, setSelectedIndex] = useState("");
   const onClickImage = (index) => {
     setSelectedIndex(index);
     onOpen();
@@ -91,16 +104,6 @@ const Works = ({ painting }) => {
       </Modal>
     </>
   );
-};
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "painting" });
-
-  return {
-    props: {
-      painting: data.contents,
-    },
-  };
-};
+});
 
 export default Works;

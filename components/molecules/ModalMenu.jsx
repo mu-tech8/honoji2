@@ -1,8 +1,7 @@
-import React, { memo } from "react";
+import React from "react";
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
@@ -13,9 +12,10 @@ import {
 import { HamburgerIcon } from "@chakra-ui/icons";
 
 // eslint-disable-next-line react/display-name
-export const ModalMenu = memo((props) => {
-  const { onClickHome, onClickWorks, onClickProfile, onClickContact } = props;
+export const ModalMenu = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { onClickHome, onClickWorks, onClickProfile, onClickContact } = props;
+
   return (
     <>
       <Button
@@ -81,4 +81,4 @@ export const ModalMenu = memo((props) => {
       </Drawer>
     </>
   );
-});
+};

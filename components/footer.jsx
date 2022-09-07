@@ -1,13 +1,5 @@
-import {
-  ButtonGroup,
-  Container,
-  IconButton,
-  Stack,
-  Text,
-  Icon,
-} from "@chakra-ui/react";
-import * as React from "react";
-import { FaTwitter, FaInstagram } from "react-icons/fa";
+import { ButtonGroup, Container, Stack, Text, Icon } from "@chakra-ui/react";
+import { FaTwitter, FaInstagram, FaTshirt } from "react-icons/fa";
 import Link from "next/link";
 
 export const Footer = () => (
@@ -35,6 +27,11 @@ export const Footer = () => (
           <Link href="https://twitter.com/_24900mm">
             <a target="_blank">
               <Icon as={FaTwitter} w={5} h={5} fontSize="1.25rem" mt={12} />
+            </a>
+          </Link>
+          <Link href="https://suzuri.jp/_249cm">
+            <a target="_blank">
+              <Icon as={FaTshirt} w={5} h={5} fontSize="1.25rem" mt={12} />
             </a>
           </Link>
         </ButtonGroup>

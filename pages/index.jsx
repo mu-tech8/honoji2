@@ -1,9 +1,21 @@
 import { client } from "../libs/client";
 import { Image, Flex, Center } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
-import React from "react";
+import { memo } from "react";
 
-const Home = ({ painting }) => {
+// データをテンプレートに受け渡す部分の処理を記述します
+export const getStaticProps = async () => {
+  const data = await client.get({ endpoint: "painting" });
+
+  return {
+    props: {
+      painting: data.contents,
+    },
+  };
+};
+
+// eslint-disable-next-line react/display-name
+const Home = memo(({ painting }) => {
   return (
     <>
       <Seo
@@ -41,16 +53,6 @@ const Home = ({ painting }) => {
       </Center>
     </>
   );
-};
-// データをテンプレートに受け渡す部分の処理を記述します
-export const getStaticProps = async () => {
-  const data = await client.get({ endpoint: "painting" });
-
-  return {
-    props: {
-      painting: data.contents,
-    },
-  };
-};
+});
 
 export default Home;

@@ -1,13 +1,10 @@
-import { Flex, Stack, Heading, Box, Button, Modal } from "@chakra-ui/react";
-
+import { Flex, Stack, Heading, Box } from "@chakra-ui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { PopoverMenu } from "./molecules/PopoverMenu";
-import { memo } from "react";
 import { ModalMenu } from "./molecules/ModalMenu";
 
 // eslint-disable-next-line react/display-name
-export const Header = memo(() => {
+export const Header = () => {
   const router = useRouter();
 
   const onClickHome = () => router.push("/");
@@ -46,4 +43,4 @@ export const Header = memo(() => {
       />
     </>
   );
-});
+};

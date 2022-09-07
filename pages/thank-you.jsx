@@ -1,6 +1,5 @@
 import { Flex } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
-import React from "react";
 
 const Thankyou = () => {
   return (
