@@ -6,8 +6,8 @@ export default function handler(req, res) {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
       to: req.body.email,
-      bcc: "24800mm@gmail.com",
-      from: "info_satohonatsu@248cm.com",
+      bcc: process.env.BCC_MAIL,
+      from: process.env.FROM_MAIL,
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
