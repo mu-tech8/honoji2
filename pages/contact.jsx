@@ -8,6 +8,7 @@ import {
   Button,
   Center,
   FormLabel,
+  Stack,
 } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
 import fetch from "node-fetch";
@@ -30,7 +31,6 @@ const Contact = () => {
       },
       method: "POST",
     });
-
     if (res.ok) router.push("/thank-you");
   };
 
@@ -47,7 +47,7 @@ const Contact = () => {
         textAlign="center"
         my={8}
       >
-        <form onSubmit={sendForm}>
+        <Stack as="form" onSubmit={sendForm}>
           <FormControl w={{ base: "300px", md: "500px" }}>
             <FormLabel>Name</FormLabel>
             <Input
@@ -81,7 +81,7 @@ const Contact = () => {
               送信
             </Button>
           </FormControl>
-        </form>
+        </Stack>
       </Flex>
     </>
   );
