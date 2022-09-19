@@ -20,6 +20,7 @@ export default function handler(req, res) {
         if (error.response) {
           console.error(error.response.body);
         }
+        res.status(400).json({ status: "ERROR", message: error.message });
       }
     })();
   }
