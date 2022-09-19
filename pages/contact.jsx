@@ -57,6 +57,8 @@ const Contact = () => {
               mb={1}
               required
             />
+          </FormControl>
+          <FormControl w={{ base: "300px", md: "500px" }}>
             <FormLabel>Email address</FormLabel>
             <Input
               type="text"
@@ -65,6 +67,8 @@ const Contact = () => {
               mb={1}
               required
             />
+          </FormControl>
+          <FormControl w={{ base: "300px", md: "500px" }}>
             <FormLabel>Message</FormLabel>
             <Textarea
               name="message"
@@ -72,6 +76,8 @@ const Contact = () => {
               placeholder="本文"
               required
             ></Textarea>
+          </FormControl>
+          <FormControl w={{ base: "300px", md: "500px" }}>
             <Button
               mt={3}
               colorScheme="teal"
