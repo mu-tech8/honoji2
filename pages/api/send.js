@@ -26,7 +26,6 @@ export default function handler(req, res) {
 
   console.log(req);
   console.log(res);
-  console.log(response);
   console.log(msg);
 
   res.status(200);
