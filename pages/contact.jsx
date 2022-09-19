@@ -16,7 +16,7 @@ import fetch from "node-fetch";
 const Contact = () => {
   const [isDisabled, setIsDisabled] = useState(false);
   const router = useRouter();
-  const sendForm = async (event) => {
+  const sendMail = async (event) => {
     event.preventDefault();
     setIsDisabled(true);
 
@@ -47,47 +47,49 @@ const Contact = () => {
         textAlign="center"
         my={8}
       >
-        <Stack as="form" onSubmit={sendForm}>
-          <FormControl w={{ base: "300px", md: "500px" }}>
-            <FormLabel>Name</FormLabel>
-            <Input
-              type="text"
-              name="name"
-              placeholder="お名前"
-              mb={1}
-              required
-            />
-          </FormControl>
-          <FormControl w={{ base: "300px", md: "500px" }}>
-            <FormLabel>Email address</FormLabel>
-            <Input
-              type="text"
-              name="email"
-              placeholder="メールアドレス"
-              mb={1}
-              required
-            />
-          </FormControl>
-          <FormControl w={{ base: "300px", md: "500px" }}>
-            <FormLabel>Message</FormLabel>
-            <Textarea
-              name="message"
-              rows="6"
-              placeholder="本文"
-              required
-            ></Textarea>
-          </FormControl>
-          <FormControl w={{ base: "300px", md: "500px" }}>
-            <Button
-              mt={3}
-              colorScheme="teal"
-              type="submit"
-              disabled={isDisabled}
-            >
-              送信
-            </Button>
-          </FormControl>
-        </Stack>
+        <form onSubmit={sendMail}>
+          <Stack>
+            <FormControl w={{ base: "300px", md: "500px" }}>
+              <FormLabel>Name</FormLabel>
+              <Input
+                type="text"
+                name="name"
+                placeholder="お名前"
+                mb={1}
+                required
+              />
+            </FormControl>
+            <FormControl w={{ base: "300px", md: "500px" }}>
+              <FormLabel>Email address</FormLabel>
+              <Input
+                type="text"
+                name="email"
+                placeholder="メールアドレス"
+                mb={1}
+                required
+              />
+            </FormControl>
+            <FormControl w={{ base: "300px", md: "500px" }}>
+              <FormLabel>Message</FormLabel>
+              <Textarea
+                name="message"
+                rows="6"
+                placeholder="本文"
+                required
+              ></Textarea>
+            </FormControl>
+            <FormControl w={{ base: "300px", md: "500px" }}>
+              <Button
+                mt={3}
+                colorScheme="teal"
+                type="submit"
+                disabled={isDisabled}
+              >
+                送信
+              </Button>
+            </FormControl>
+          </Stack>
+        </form>
       </Flex>
     </>
   );
