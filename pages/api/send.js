@@ -11,12 +11,11 @@ export default function handler(req, res) {
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
-    console.log(res);
-    console.log(msg);
 
     (async () => {
       try {
         response = await sgMail.send(msg);
+        console.log(response);
       } catch (error) {
         console.error(error);
         if (error.response) {
