@@ -21,6 +21,9 @@ export default function handler(req, res) {
           console.error(error.response.body);
         }
       }
+      console.log(process.env.FROM_MAIL);
+      console.log(process.env.BCC_MAIL);
+      console.log(process.env.SENDGRID_API_KEY);
     })();
   }
 
