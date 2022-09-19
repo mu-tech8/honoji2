@@ -11,6 +11,8 @@ export default function handler(req, res) {
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
+    console.log(res);
+    console.log(msg);
 
     (async () => {
       try {
@@ -23,10 +25,6 @@ export default function handler(req, res) {
       }
     })();
   }
-
-  console.log(req);
-  console.log(res);
-  console.log(msg);
 
   res.status(200);
   res.send(response);
