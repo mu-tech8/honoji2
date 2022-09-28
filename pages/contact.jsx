@@ -11,7 +11,6 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import Seo from "../components/layout/Seo";
-import fetch from "node-fetch";
 
 const Contact = () => {
   const [isDisabled, setIsDisabled] = useState(false);
@@ -62,7 +61,7 @@ const Contact = () => {
             <FormControl w={{ base: "300px", md: "500px" }}>
               <FormLabel>Email address</FormLabel>
               <Input
-                type="text"
+                type="email"
                 name="email"
                 placeholder="メールアドレス"
                 mb={1}
