@@ -3,11 +3,11 @@ export default function handler(req, res) {
 
   if (req.method === "POST") {
     const sgMail = require("@sendgrid/mail");
-    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+    sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
     const msg = {
       to: req.body.email,
-      bcc: process.env.BCC_MAIL,
-      from: process.env.FROM_MAIL,
+      bcc: process.env.NEXT_PUBLIC_BCC_MAIL,
+      from: process.env.NEXT_PUBLIC_FROM_MAIL,
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
