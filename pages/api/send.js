@@ -23,9 +23,10 @@ export default function handler(req, res) {
       }
     })();
   }
+  res.status(200);
+  res.send(response);
+
   console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
   console.log(NEXT_PUBLIC_BCC_MAIL);
   console.log(NEXT_PUBLIC_FROM_MAIL);
-  res.status(200);
-  res.send(response);
 }
