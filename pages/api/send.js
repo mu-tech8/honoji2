@@ -1,8 +1,9 @@
+import sgMail from "@sendgrid/mail";
+
 export default function handler(req, res) {
   let response = null;
 
   if (req.method === "POST") {
-    const sgMail = require("@sendgrid/mail");
     sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
     const msg = {
       to: req.body.email,
@@ -23,6 +24,7 @@ export default function handler(req, res) {
       }
     })();
   }
+  console.log(process.env.NEXT_PUBLIC_API_KEY);
   console.log(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
   console.log(process.env.NEXT_PUBLIC_BCC_MAIL);
   console.log(process.env.NEXT_PUBLIC_FROM_MAIL);
