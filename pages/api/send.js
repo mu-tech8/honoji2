@@ -1,10 +1,10 @@
 import sgMail from "@sendgrid/mail";
+sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   let response = null;
 
   if (req.method === "POST") {
-    sgMail.setApiKey(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
     const msg = {
       to: req.body.email,
       bcc: process.env.NEXT_PUBLIC_BCC_MAIL,
@@ -13,16 +13,14 @@ export default function handler(req, res) {
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
 
-    (async () => {
-      try {
-        response = await sgMail.send(msg);
-      } catch (error) {
-        console.error(error);
-        if (error.response) {
-          console.error(error.response.body);
-        }
+    try {
+      response = await sgMail.send(msg);
+    } catch (error) {
+      console.error(error);
+      if (error.response) {
+        console.error(error.response.body);
       }
-    })();
+    }
   }
   console.log(process.env.NEXT_PUBLIC_API_KEY);
   console.log(process.env.NEXT_PUBLIC_SENDGRID_API_KEY);
