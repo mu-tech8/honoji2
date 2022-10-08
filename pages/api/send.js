@@ -23,6 +23,8 @@ export default function handler(req, res) {
       }
     })();
   }
+  console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
+
   res.status(200);
   res.send(response);
 }
