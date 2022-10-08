@@ -15,6 +15,11 @@ export default function handler(req, res) {
     (async () => {
       try {
         response = await sgMail.send(msg);
+        console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
+
+        console.log(NEXT_PUBLIC_BCC_MAIL);
+
+        console.log(NEXT_PUBLIC_FROM_MAIL);
       } catch (error) {
         console.error(error);
         if (error.response) {
@@ -22,12 +27,6 @@ export default function handler(req, res) {
         }
       }
     })();
-
-    console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
-
-    console.log(NEXT_PUBLIC_BCC_MAIL);
-
-    console.log(NEXT_PUBLIC_FROM_MAIL);
   }
   res.status(200);
   res.send(response);
