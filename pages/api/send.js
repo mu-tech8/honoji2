@@ -11,15 +11,14 @@ export default function handler(req, res) {
       subject: "お問合せありがとうございました。",
       text: `${req.body.name} 様\nお問合せを受け付けました。回答をお待ちください。\n\n ${req.body.message}`,
     };
+    console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
 
+    console.log(NEXT_PUBLIC_BCC_MAIL);
+
+    console.log(NEXT_PUBLIC_FROM_MAIL);
     (async () => {
       try {
         response = await sgMail.send(msg);
-        console.log(NEXT_PUBLIC_SENDGRID_API_KEY);
-
-        console.log(NEXT_PUBLIC_BCC_MAIL);
-
-        console.log(NEXT_PUBLIC_FROM_MAIL);
       } catch (error) {
         console.error(error);
         if (error.response) {
